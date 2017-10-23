@@ -1,0 +1,22 @@
+# Spring properties
+spring:
+  application:
+     name: categorias-service  # Service registers under this name
+  hibernate:
+     ddl-auto: none
+  datasource:
+     url: jdbc:mysql://localhost:3306/gt-productos
+     username: grantienda
+     password: grantienda
+
+# HTTP Server
+server:
+  port: 17000   # HTTP (Tomcat) port
+
+# Discovery Server Access
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/

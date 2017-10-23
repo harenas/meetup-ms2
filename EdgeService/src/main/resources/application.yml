@@ -1,0 +1,37 @@
+# Spring properties
+spring:
+  application:
+     name: edge-service  # Service registers under this name
+
+server:
+  port: 8080   # HTTP (Tomcat) port
+
+zuul:
+  #ignoredServices: '*'
+  routes:
+    clientes:
+      path: /clientes/**
+      servideId: CLIENTES-SERVICE
+      stripPrefix: false
+    productos:
+      path: /productos/**
+      servideId: PRODUCTOS-SERVICE
+      stripPrefix: false
+    categorias:
+      path: /categorias/**
+      servideId: CATEGORIAS-SERVICE
+      stripPrefix: false
+    inventario:
+      path: /inventario/**
+      servideId: INVENTARIO-SERVICE
+      stripPrefix: false
+
+# Discovery Server Access
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:1111/eureka/
+

@@ -1,0 +1,16 @@
+# Spring properties
+spring:
+  application:
+     name: productos-service  # Service registers under this name
+
+# HTTP Server
+server:
+  port: 16000   # HTTP (Tomcat) port
+
+# Discovery Server Access
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
